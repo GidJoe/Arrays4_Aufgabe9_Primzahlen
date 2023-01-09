@@ -5,20 +5,22 @@ import java.io.InputStreamReader;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        BufferedReader cock = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("n?");
-        int anzahl = Integer.parseInt(cock.readLine());
-        boolean[] zahlen = new boolean[anzahl + 1];
+        int anzahl = Integer.parseInt(reader.readLine());
+        boolean[] n = new boolean[anzahl + 1];
 
 
-        for (int zahl = 2; zahl < anzahl; zahl++) {
-            for (int vielfaches = 2; vielfaches <= (anzahl / zahl); vielfaches++) {
-                zahlen[zahl * vielfaches] = true;
+        for (int a = 2; a < anzahl; a++) {
+            for (int b = 2; b < anzahl; b++) {
+                if ((a*b)<n.length) {n[a * b] = true;}
             }
         }
 
+        System.out.println("Das sind deine Primzahlen");
+        System.out.println("");
         for (int i = 1; i <= anzahl; i++) {
-            if (!zahlen[i]) {
+            if (!n[i]) {
                 System.out.print(i + " ");
             }
         }
