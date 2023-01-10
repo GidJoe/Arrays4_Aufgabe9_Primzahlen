@@ -19,10 +19,10 @@ public class Main {
 
         for (int a = 2; a < bereich; a++) {
 
-            for (int b = 2; b < bereich; b++) {
-                if ((a * b) < n.length) {
+            for (int b = 2; b <= bereich/a; b++) {
+                //if ((a * b) < n.length) {
                     n[a * b] = true;
-                }
+                //}
             }
         }
 
@@ -31,7 +31,7 @@ public class Main {
 
         System.out.println("Das sind deine Primzahlen");
         System.out.println("");
-        for (int i = 1; i <= bereich; i++) {
+        for (int i = 2; i <= bereich; i++) {
             if (!n[i]) {
                 System.out.print(i + " ");
             }
